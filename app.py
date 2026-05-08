@@ -5,6 +5,16 @@ from ultralytics import YOLO
 import av
 from collections import defaultdict
 
+@st.cache_resource
+def load_model():
+    try:
+        model = YOLO("./yolov8n.pt")
+        return model
+    except Exception as e:
+        st.error(f"Model loading failed: {e}")
+        st.stop()
+
+model = load_model()
 # ---------------- PAGE CONFIG ---------------- #
 st.set_page_config(
     page_title="AI Vision Dashboard",
