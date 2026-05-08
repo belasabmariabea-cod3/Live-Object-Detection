@@ -1,8 +1,8 @@
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer
+import cv2
 from ultralytics import YOLO
 import av
-import cv2
 from collections import defaultdict
 
 # ---------------- PAGE CONFIG ---------------- #
